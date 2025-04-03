@@ -33,14 +33,14 @@
       <material name="orange"/>
     </visual>
 
-    <inertial>
+    <!-- <inertial>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <mass value="${base_mass}"/>
       <inertia
         ixx="${base_mass / 12.0 * (base_length*base_length + base_height*base_height)}" ixy="0.0" ixz="0.0"
         iyy="${base_mass / 12.0 * (base_height*base_height + base_width*base_width)}" iyz="0.0"
         izz="${base_mass / 12.0 * (base_width*base_width + base_length*base_length)}"/>
-      </inertial>
+      </inertial> -->
     </link>
 
     <joint name="left_wheel_joint" type="continuous">
@@ -69,14 +69,14 @@
         <material name="black"/>
       </visual>
 
-      <inertial>
+      <!-- <inertial>
         <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
         <mass value="${wheel_mass}"/>
         <inertia
           ixx="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_len*wheel_len)}" ixy="0.0" ixz="0.0"
           iyy="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_len*wheel_len)}" iyz="0.0"
           izz="${wheel_mass / 2.0 * wheel_radius*wheel_radius}"/>
-        </inertial>
+        </inertial> -->
       </link>
 
     <joint name="right_wheel_joint" type="continuous">
@@ -105,14 +105,14 @@
         <material name="black"/>
       </visual>
 
-      <inertial>
+      <!-- <inertial>
         <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
         <mass value="${wheel_mass}"/>
         <inertia
           ixx="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_len*wheel_len)}" ixy="0.0" ixz="0.0"
           iyy="${wheel_mass / 12.0 * (3*wheel_radius*wheel_radius + wheel_len*wheel_len)}" iyz="0.0"
           izz="${wheel_mass / 2.0 * wheel_radius*wheel_radius}"/>
-        </inertial>
+        </inertial> -->
       </link>
 
     <joint name="caster_frontal_wheel_joint" type="fixed">
@@ -138,14 +138,14 @@
         <material name="white"/>
       </visual>
 
-      <inertial>
+      <!-- <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="${caster_wheel_mass}"/>
         <inertia
           ixx="${caster_wheel_mass * 0.4 * (caster_wheel_radius * caster_wheel_radius)}" ixy="0.0" ixz="0.0"
           iyy="${caster_wheel_mass * 0.4 * (caster_wheel_radius * caster_wheel_radius)}" iyz="0.0"
           izz="${caster_wheel_mass * 0.4 * (caster_wheel_radius * caster_wheel_radius)}"/>
-        </inertial>
+        </inertial> -->
       </link>
 
     <joint name="caster_rear_wheel_joint" type="fixed">
@@ -171,14 +171,14 @@
         <material name="white"/>
       </visual>
 
-      <inertial>
+      <!-- <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <mass value="${caster_wheel_mass}"/>
         <inertia
           ixx="${caster_wheel_mass * 0.4 * (caster_wheel_radius * caster_wheel_radius)}" ixy="0.0" ixz="0.0"
           iyy="${caster_wheel_mass * 0.4 * (caster_wheel_radius * caster_wheel_radius)}" iyz="0.0"
           izz="${caster_wheel_mass * 0.4 * (caster_wheel_radius * caster_wheel_radius)}"/>
-        </inertial>
+        </inertial> -->
       </link>
 
   

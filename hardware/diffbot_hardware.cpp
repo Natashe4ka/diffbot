@@ -41,6 +41,7 @@
 #include <uavcan/_register/List_1_0.h>
 
 
+
 TYPE_ALIAS(Twist, reg_udral_physics_kinematics_cartesian_Twist_0_1)
 TYPE_ALIAS(HBeat, uavcan_node_Heartbeat_1_0)
 TYPE_ALIAS(JS_msg, reg_udral_physics_kinematics_rotation_Planar_0_1)
@@ -70,7 +71,6 @@ void heartbeat() {
     cy_interface->send_msg<HBeat>(&heartbeat_msg, uavcan_node_Heartbeat_1_0_FIXED_PORT_ID_, &hbeat_transfer_id);
     uptime += 1;
 }
-
 
 static float w_pos[2] = {0.0};
 static float w_vel[2] = {0.0};
@@ -127,6 +127,7 @@ namespace diffbot
 hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   const hardware_interface::HardwareInfo & info)
 {
+
   if (
     hardware_interface::SystemInterface::on_init(info) !=
     hardware_interface::CallbackReturn::SUCCESS)
@@ -135,10 +136,10 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   }
 
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
-  hw_start_sec_ =
-    hardware_interface::stod(info_.hardware_parameters["example_param_hw_start_duration_sec"]);
-  hw_stop_sec_ =
-    hardware_interface::stod(info_.hardware_parameters["example_param_hw_stop_duration_sec"]);
+  hw_start_sec_ = 0.0;
+   // hardware_interface::stod(info_.hardware_parameters["zlp"]);
+  hw_stop_sec_ = 3.0;
+   // hardware_interface::stod(info_.hardware_parameters["example_param_hw_stop_duration_sec"]);
   // END: This part here is for exemplary purposes - Please do not copy to your production code
 
   cy_interface = CyphalInterface::create_heap<LinuxCAN, O1Allocator>(100, "can0", 1000, utilities); //Node ID, transport, queue_len, utilities

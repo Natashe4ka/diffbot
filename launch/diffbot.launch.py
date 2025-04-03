@@ -34,29 +34,26 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "use_mock_hardware",
-            default_value="false",
+            "ros2_control_hardware_type",
+            default_value="diff_drive_controller",
             description="Start robot with mock hardware mirroring command to its states.",
         )
     )
 
     # Initialize Arguments
     gui = LaunchConfiguration("gui")
-    use_mock_hardware = LaunchConfiguration("use_mock_hardware")
+    ros2_control_hardware_type = LaunchConfiguration("ros2_control_hardware_type")
 
     # Get URDF via xacro
     robot_description_content = Command(
-        [
-            PathJoinSubstitution([FindExecutable(name="xacro")]),
+        [ FindExecutable(name="xacro"),
             " ",
             PathJoinSubstitution(
                 [FindPackageShare("diffbot"), "config", "diffbot.urdf.xacro"]
-            ),
-            " ",
-            "use_mock_hardware:=",
-            use_mock_hardware,
+            )
         ]
     )
+    
     robot_description = {"robot_description": robot_description_content}
 
     robot_controllers = PathJoinSubstitution(
